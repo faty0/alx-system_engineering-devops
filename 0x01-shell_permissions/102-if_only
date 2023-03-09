@@ -1,0 +1,2 @@
+#!/bon/bash
+sudo chown --from=guillaume betty hello
