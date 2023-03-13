@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -l --sort=time | cut -d " " -f 9 | head
+ls -l --sort=time . | cut -d " " -f 9 | head
