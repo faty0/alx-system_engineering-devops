@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ltp | grep -v / | cut -d " " -f 9 | head -10
+ls -1tp | grep -v / | head -10
