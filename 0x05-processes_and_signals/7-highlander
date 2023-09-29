@@ -5,9 +5,9 @@ print_sig()
 {
 	echo "I am invincible!!!"
 }
+trap print_sig SIGTERM
 while :
 do
 	echo "To infinity and beyond"
 	sleep 2
-	trap print_sig SIGTERM
 done
