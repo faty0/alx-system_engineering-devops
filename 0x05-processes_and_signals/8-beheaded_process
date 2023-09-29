@@ -3,5 +3,5 @@
 PID=$(pgrep -f "7-highlander")
 if [ -n "$PID" ]
 then
-	kill -s SIGKILL "$PID"
+	sudo kill -s SIGKILL "$PID"
 fi
