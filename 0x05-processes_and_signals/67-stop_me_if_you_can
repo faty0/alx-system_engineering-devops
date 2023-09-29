@@ -4,5 +4,5 @@
 PID=$(pgrep -f "7-highlander")
 if [ -n "$PID" ]
 then
-	pkill "7-highlander"
+	pkill --signal SIGTERM "7-highlander"
 fi
