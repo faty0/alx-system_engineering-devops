@@ -3,7 +3,7 @@
 
 case $1 in
     start)
-        ./100-process_and_pid_file &
+        "./manage_my_process" &
         PID=$!
         echo $PID > /var/run/my_process.pid
         echo "manage_my_process started"
@@ -11,17 +11,18 @@ case $1 in
     stop)
         PID=$(cat /var/run/my_process.pid)
         kill "$PID"
-        rm /var/run/my_process.pid
+        sudo rm /var/run/my_process.pid
         echo "manage_my_process stopped"
         ;;
     restart)
-        $0 stop
+        PID=$(cat /var/run/my_process.pid)
+        kill "$PID"
         sleep 1
-        $0 start
+        ./manage_my_process &
         echo "manage_my_process restarted"
         ;;
     *)
-        echo "Usage: $0 {start|stop|restart}"
+        echo "Usage: manage_my_process {start|stop|restart}"
         exit 1
         ;;
 esac
