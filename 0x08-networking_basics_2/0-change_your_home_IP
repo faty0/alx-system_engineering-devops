@@ -3,5 +3,5 @@
 
 sudo touch hosttest
 echo "127.0.0.2	localhost" > hosttest
-echo "8.8.8.8	facebook.com" > hosttest
+echo "8.8.8.8	facebook.com" >> hosttest
 sudo cp -f hosttest /etc/hosts
